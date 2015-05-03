@@ -1,0 +1,42 @@
+/* Space out content a bit */
+body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+	background: #f5f5f5;
+}
+
+/* Customize container */
+.container {
+	background: #fff;
+}
+.container h1 {
+	text-transform: capitalize;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Custom format for block-level elements */
+.custom-group {
+	background: #f5f5f5;
+	border: 1px solid #333;
+	border-radius: 4px;
+	padding: 5px 10px;
+	margin-bottom: 15px;
+}
+
+/* Monospace style for output control */
+output {
+	font-family: "trebuchet ms", fantasy, sans-serif;
+}
+
+/* Custom style for .btn-sm */
+.btn-sm { margin-top: 2px; }
+/* Custom style for #primeFactors */
+#primeFactors {margin-top: 15px;}
