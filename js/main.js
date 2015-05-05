@@ -1,6 +1,43 @@
 $(document).ready(function(){
 	/* All logic goes here */
 
+	// #action-ok button OnClick action
+	$('#action-ok').on("click", function(){
+		// Grab a number
+		var number = parseInt($('#number').val());
+
+		// Create an array of prime numbers until that number
+		var primes = primeNumbersUntil(number);
+
+		$('#result').empty();
+
+		// Check if number is prime
+		if(primes.indexOf(number) != -1){
+			// if number is not found in the array, it is prime
+			$('#result').text(number + " is prime");
+		} else {
+			// otherwise, it is not prime so factorize it
+			$('#result').append(' = ');
+			for(var index = 0; number > 1; index += 1){
+				var divisor = primes[index];
+				var exponent = 0;
+				if (number % divisor == 0){
+					while(number % divisor == 0){
+						number /= divisor;
+						exponent += 1;
+					}
+					$('#result').append(divisor);
+					if(exponent > 1) {
+						// exponent = 1 can be omitted as in a^1 = a
+						$('#result').append("<sup>" + exponent + "</sup>");
+					}
+					if(number > 1){
+						$('#result').append(".");
+					}
+				}
+			}
+		}
+	});
 });
 
 function primeNumbersUntil(num){
